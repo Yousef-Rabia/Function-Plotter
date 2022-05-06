@@ -13,10 +13,18 @@ def exit():
 
 
 def plot_function():
-    min_value = int(min_x.get())
-    max_value = int(max_x.get())
-    function_to_plot = Func.get()
-
+    try:
+        min_value = int(min_x.get())
+    except:
+        messagebox.showerror('Input Error', 'Please fill Min value with valid input')
+    try:
+        max_value = int(max_x.get())   
+    except:
+        messagebox.showerror('Input Error', 'Please fill Max value with valid input')
+    try:
+        function_to_plot = Func.get()
+    except:
+        messagebox.showerror('Input Error', 'Please fill Function blank with valid input')
     if min_value < max_value:
         subs_function(min_value, function_to_plot)
         subs_function(max_value, function_to_plot)
@@ -32,12 +40,19 @@ def subs_function(values,func_of_x):
         exp = parse_expr(func_of_x.replace('^','**'))
         exp_v = exp.subs(x,values)
     except:
-        messagebox.showerror('Input Error', 'Invalid Function')
+        messagebox.showerror('Input Error', 'Please fill Function blank with valid input')
     return exp_v
 
 def plot_it():
-    min_value = int(min_x.get())
-    max_value = int(max_x.get())
+    try:
+        min_value = int(min_x.get())
+    except:
+        messagebox.showerror('Input Error', 'Invalid Min value')
+    try:
+        max_value = int(max_x.get())   
+    except:
+        messagebox.showerror('Input Error', 'Invalid Max value')
+
     x_axis = []
     y_axis = []
     i = float(min_x.get())
