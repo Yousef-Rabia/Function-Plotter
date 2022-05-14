@@ -28,7 +28,7 @@ def plot_function():
     if min_value < max_value:
         subs_function(min_value, function_to_plot)
         subs_function(max_value, function_to_plot)
-        plot_it()
+        plot_it(function_to_plot)
         Func_plot.mainloop()
     else:
         messagebox.showerror('Limited Error', 'Max value should be greater than min value')
@@ -43,7 +43,7 @@ def subs_function(values,func_of_x):
         messagebox.showerror('Input Error', 'Please fill Function blank with valid input')
     return exp_v
 
-def plot_it():
+def plot_it(function_to_plot):
     try:
         min_value = int(min_x.get())
     except:
@@ -65,10 +65,18 @@ def plot_it():
     for values in x_axis:
         y_axis.append(subs_function(values, Func.get()))
 
-
-    plot.plot(x_axis, y_axis)
+    plot.title(function_to_plot)
+    try:
+        plot.plot(x_axis, y_axis)
+    except:
+        messagebox.showerror('Input Error', 'Please fill Function blank with valid input')
+        return
+    plot.axhline(y=0, color='black')
+    plot.axvline(x=0, color='black')
     plot.xlabel("x-axis")
     plot.ylabel("y-axis")
+    plot.grid(color='black',linewidth=0.2)
+
     plot.show()
 # Create Main app window
 Func_plot = Tk()
@@ -120,3 +128,4 @@ btn_exit.place(x=330, y=300, height=40, width=85)
 
 # Run app infinitely
 Func_plot.mainloop()
+
