@@ -1,8 +1,23 @@
 # Function-Plotter
 Master Micro's task to test programming skills for summer internship applicants
+GUI Python program that plots functions that are entered by the user.
+
+The program takes a minimum and maximum values for x and plots it as a Graph GUI.
+
 
 ## Built Using <a name = "tech"></a>
 - **Python**
+- The Program was developed using Python Libraries:
+
+      1-Tkinter
+
+      2-Matplotlib
+
+      3-Sympy
+
+      4-Numpy
+
+
 ## Interface
 <div name="Screenshots" align="center">
    <img width=70% src="screenshots\1.png" alt=""></a>
