@@ -58,9 +58,9 @@ def plot_it(function_to_plot):
     i = float(min_x.get())
 
 
-    while i<max_value:
+    while i<=max_value:
         x_axis.append(i)
-        i=i+0.15
+        i=i+0.1
 
     for values in x_axis:
         y_axis.append(subs_function(values, Func.get()))
